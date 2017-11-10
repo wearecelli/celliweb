@@ -1,0 +1,267 @@
+/*-------- Site Wide ----------------------------------------------------------*/
+
+/* Color Palette */
+$tan: #EFE2B2;
+$brown: #4F3528;
+$black: #1B1814;
+$orange: #E9C474;
+
+$serif-stack: 'Kreon', serif;
+$sans-stack: 'Open Sans', sans-serif;
+
+[hidden] {
+  display: none;
+}
+
+html {
+  font-family: $sans-stack;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    /* min-height: 2160px; */
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1170px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 970px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 750px;
+    }
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+/*----------------------------------------------------------------------------*/
+
+/*-------- Header ------------------------------------------------------------*/
+
+.header-div {
+    margin: 0 auto;
+    text-align: center;
+}
+
+/*----------------------------------------------------------------------------*/
+
+/*---------- Nav Bar ---------------------------------------------------------*/
+#main-nav {
+    text-align: center;
+    width: 100%;
+    height: 70px;
+    background: #e1a739;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    list-style: none;
+    z-index: 100;
+}
+
+#main-nav li {
+    margin: 0 20px;
+    display: inline-block;
+    height: 100%;
+}
+
+#main-nav li a {
+    text-decoration: none;
+    display: block;
+    padding: 0 60px;
+    color: #4C292D;
+    text-align: center;
+    line-height: 70px;
+
+    font-family: "Open Sans", "Arial", "sans-serif";
+    font-size: 20px;
+    text-transform: lowercase;
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-weight: 400;
+}
+
+#main-nav li a:hover {
+    color: #98525a;
+}
+/*----------------------------------------------------------------------------*/
+
+/*---------- Body ------------------------------------------------------------*/
+
+#ajax-body-wrapper {
+    min-height: 1080px;
+}
+
+/*----------------------------------------------------------------------------*/
+
+/*---------- Splash ----------------------------------------------------------*/
+#splash-container {
+    position: relative;
+    z-index: 5;
+    background-color: black;
+}
+#video-container {
+    z-index: 0;
+}
+#video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+}
+#photoSplash{
+    position: absolute;
+    display: block;
+    z-index: 1;
+    top: 0px;
+    left:-100px;
+    right: 0px;
+    height: 800px;
+    display:none;
+}
+#mini-title {
+    text-align: center;
+    position: absolute;
+    z-index: 15;
+}
+
+#mini-title > h1 {
+    font-family: 'Pacifico';
+    color: #e1a739;
+    font-size: 1em;
+    font-weight: 300;
+}
+
+#logo{
+    z-index: 10;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 50px;
+    display: block;
+    opacity: .7;
+
+}
+
+#logo img{
+    max-width: 40%;
+}
+
+/*----------------------------------------------------------------------------*/
+
+/*---------- Footer ----------------------------------------------------------*/
+
+#footer {
+    width: 100%; 
+    height: 120px;
+    background: #a49476;
+    bottom: 0;  
+    z-index: 997;
+/*  position: absolute;
+    bottom: 0;
+    left: 0;*/
+
+    position: relative;
+}
+
+
+#footer .wrapper {
+    width: 885px; height: 95px;
+    margin: 0 auto;
+    position: relative;
+}
+
+#line-left {
+    font-size: 15px;
+    color: #4C292D;
+    font-weight: 500;
+    text-transform: uppercase;
+    position: absolute;
+    top: 25px; left: 0; 
+}
+
+#line-left a {
+    font-size: 10px;
+    color: black;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+#line-left a:hover {
+    color: #FFF;
+}
+
+#line-right {
+    font-size: 10px;
+    color: #4C292D;
+/*  line-height: 85px;
+*/  font-weight: 500;
+    text-transform: uppercase;
+    position: absolute;
+    top: 5px; right: 0; 
+}
+
+#line-right a {
+    color: #000000;
+    text-decoration: none;
+}
+
+#line-right a:hover {
+    color: #FFF;
+}
+
+#s-icon {
+    width: 48px; height: 51px;
+    background: url(img/s-icon.png);
+    margin: 0 0 0 -24px;
+    position: absolute;
+    top: -23px; left: 50%;
+}
+
+#tagline {
+    width: 288px; height: 26px;
+    background: url(img/not-your-standard-cider.png);
+    margin: -13px 0 0 -144px;
+    position: absolute;
+    top: 50%; left: 50%;
+}
+
+#innod {
+    height: 70px;
+    opacity: .7;
+}
+
+
+/*----------------------------------------------------------------------------*/
+
+

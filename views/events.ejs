@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<head>
+  <title>Events · Celli @ Berkeley</title>
+</head>
+<body>
+  <div class="section-header">
+    <h1>Upcoming Events &amp Performances</h1>
+  </div>
+  <hr>
+  <% if (events.upcoming.length === 0) { %>
+    <p>There are currently no upcoming events. Check out our <a href="https://www.facebook.com/WeAreCelli" target="_blank">Facebook Page</a>!</p>
+  <% } else { %>
+    <% for(var i in events.upcoming) { var event = events.upcoming[i]; %>
+      <div class="pure-g-r event-box">
+        <div class="pure-u-1 event-photo" style="background-image: url(<%=event.cover.source%>);">
+        </div>
+          <!-- <img class="event-photo" src='<%=event.cover.source%>'> -->
+        <div class="pure-u-1 event-info">
+          <h1><a href="http://www.facebook.com/event.php?eid=<%=event.id%>" target="_blank"><%=event.name%></a></h1>
+          <h2><%=event.location%> | <%=event.date%> | <%=event.time%></h2>
+        </div>
+        <div class="pure-u-1 event-description">
+          <p><%=event.description%></p>
+          <div class="button">
+            <a href="http://www.facebook.com/event.php?eid=<%=event.id%>" target="_blank">More Details</a>
+          </div>
+        </div>
+      </div>
+    <% } %>
+  <% } %>
+  <!-- <div class="section-header">
+    <h1>Past Events &amp Performances</h1>
+  </div>
+  <hr>
+  <% for(var i in events.past) { var event = events.past[i]; %>
+  <div class="pure-g-r past-event-box" onclick="window.open('http://www.facebook.com/event.php?eid=<%=event.id%>','_blank');">
+    <div class="pure-u-1-2 past-event-name">
+      <h1><%=event.name%></h1>
+    </div>
+    <div class="pure-u-1-2 past-event-info">
+      <h2><%=event.date%> | <%=event.time%></h2>
+    </div>
+  </div>
+  <% } %> -->
+</body>

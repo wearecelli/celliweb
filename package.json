@@ -1,0 +1,22 @@
+{
+  "name": "celli-berkeley",
+  "version": "0.11.12-pre",
+  "description": "Celli @ Berkeley website",
+  "main": "app.js",
+  "dependencies": {
+    "ejs": "^0.8.5",
+    "ejs-locals": "^1.0.2",
+    "express": "^3.21.2",
+    "express-partials": "^0.2.0",
+    "http": "0.0.0",
+    "markedejs": "^0.1.0",
+    "node-markdown": "^0.1.1",
+    "url": "^0.7.9"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Innovative Design - Web Tier",
+  "license": "MIT"
+}

@@ -1,0 +1,135 @@
+/** Start of About Page CSS */
+
+.giantContain {
+    overflow: hidden;
+    max-width: 675px;
+    margin-left: auto;
+    text-align: center;
+    margin-right: auto;
+}
+
+.personContain {
+    height: 220px;
+    position: relative;
+    vertical-align: middle;
+    display: inline-block;
+    margin-bottom: 40px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.imageContain {
+    border-radius: 5px 5px 5px 5px;
+    height:175px;
+    width:175px;
+    position:relative;
+    background: black;
+    text-align: center;
+    line-height: 20px;
+}
+
+.info {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.profilePic {    
+    position:absolute;
+    border-radius: 5px 5px 5px 5px;
+    left:0;
+    top:0;
+    width: 175px;
+    height: 175px;
+    -webkit-transition: all 600ms ease;
+    -moz-transition: all 600ms ease;
+    -ms-transition: all 600ms ease;
+    -o-transition: all 600ms ease;
+    transition: all 600ms ease;
+}
+
+.blurb {
+    border-radius: 5px 5px 5px 5px;
+    position:absolute;    
+    color: rgba(0,0,0,0);
+    font-size:16px;
+    left:20px;
+    right: 20px;
+    visibility: hidden;
+    user-select: none;
+    -moz-user-select: none;
+    -ms-user-select:none;
+    -webkit-user-select:none;
+    -o-user-select:none;
+    -webkit-transition: all 600ms ease;
+    -moz-transition: all 600ms ease;
+    -ms-transition: all 600ms ease;
+    -o-transition: all 600ms ease;
+    transition: all 600ms ease;
+}
+
+.imageContain:hover .blurb{
+    border-radius: 5px 5px 5px 5px;
+    visibility: visible;
+    color: white;
+    -webkit-transition: all 600ms ease;
+    -moz-transition: all 600ms ease;
+    -ms-transition: all 600ms ease;
+    -o-transition: all 600ms ease;
+    transition: all 600ms ease;
+     user-select: none;
+    -moz-user-select: none;
+    -ms-user-select:none;
+    -webkit-user-select:none;
+}
+
+.imageContain:hover .profilePic {
+    opacity: 0.2;
+    -webkit-transition: all 600ms ease;
+    -moz-transition: all 600ms ease;
+    -ms-transition: all 600ms ease;
+    -o-transition: all 600ms ease;
+    transition: all 600ms ease;
+
+}
+
+.bigContain {
+  border: 1px solid;
+}
+
+.paragraphContain {
+    border-radius: 5px 5px 5px 5px;
+    background-color: silver;
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+    max-width: 720px;
+    /*top: 1px;*/
+}
+
+#image {
+    display: block;
+    width: 100%;
+    height: auto;
+    position: relative;
+    /*-webkit-filter: grayscale(100%) brightness(0.3) contrast(0.9) opacity(0.8);*/
+    -webkit-filter: brightness(0.9) contrast(0.9) opacity(0.8);
+
+}
+
+.text {
+    position: relative;    
+    /*color: #000000;*/
+    color: white;
+    font-size:24px;
+    top: 0;
+    /*text-align: justify;*/
+    text-align: center;
+    padding: 0 20px 1px 20px;
+}
+
+
+
+

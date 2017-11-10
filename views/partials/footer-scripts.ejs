@@ -1,0 +1,169 @@
+<script>
+
+  var at_splash = false;
+  var hist_state = History.getState();
+  var prev_hist_state;
+  var scrollingTo = false;
+
+  if (jQuery.browser.mobile) {
+    $('#splash-vid').addClass('hidden');
+    $('#splash-img').removeClass('hidden');
+  }
+
+  var constWinHeight;
+  var mobileNavVisible;
+  var navMargin;
+  /*--- Document Ready -------------------------------------------------------*/
+  $(document).ready( function(){
+    constWinHeight = $(window).height();
+    mobileNavVisible = ($('#main-nav').css('display') == "none");
+
+    if (mobileNavVisible) {
+        constWinHeight *= 0.75;
+    }
+
+    /*--- URL Management & Scroll Position -----------------------------------*/
+    if (hist_state.url.slice(-1) != '/') {
+      $(window).scrollTop(constWinHeight - 70);
+    } else {
+      at_splash = true;
+    }
+
+    $('#splash-container').css({
+      width: '100%',
+      height: constWinHeight
+    });
+    $('.video').hide();
+
+    /*--- Nav Fixing & URL Management ----------------------------------------*/
+    var nav_fixed = false;
+
+    $(document).scroll( function() {
+      var scrollY = $(document).scrollTop();
+      if (scrollY > (constWinHeight - 70)) {
+
+        if (nav_fixed) {
+          return;
+        }
+        nav_fixed = true;
+        $('#main-nav').css({
+          position: 'fixed',
+          top: 0,
+          bottom: ''
+        });
+
+        if (!at_splash) { return; }
+        at_splash = false;
+        if (!scrollingTo) {
+          if (!prev_hist_state) {
+            History.replaceState({state: '/about'}, 
+                              'About · Celli @ Berkeley', 
+                              '/about');
+          } else {
+            History.replaceState({state: prev_hist_state.url},
+                              prev_hist_state.title,
+                              prev_hist_state.url);
+          }
+        }
+
+      } else if (scrollY < 200) {
+
+        if (at_splash || scrollingTo) {
+          return;
+        }
+        prev_hist_state = History.getState();
+        History.replaceState({state: '/'}, 'Celli @ Berkeley', '/');
+        at_splash = true;
+
+      } else {
+
+        if (!nav_fixed) {
+          return;
+        }
+        nav_fixed = false;
+        $('#main-nav').css({
+          position: 'absolute',
+          top: '',
+          bottom: 0
+        });
+
+      }
+    });
+
+    /*--- Video/Title Resizing -----------------------------------------------*/
+    $(window).resize( function() {
+      var resizeWinWidth = $(window).width(),
+          videoWidth = constWinHeight * (854/480),
+          videoHeight = constWinHeight,
+          videoLeft = (resizeWinWidth - videoWidth) / 2,
+          videoTop = 0,
+          logoHeight = constWinHeight / 1.7;
+      mobileNavVisible = ($('#main-nav').css('display') == "none");
+      navMargin = (mobileNavVisible) ? 50 : -70;
+      if (videoWidth < resizeWinWidth) {
+        videoWidth = (resizeWinWidth + 40);
+        videoHeight = (resizeWinWidth + 40) * (480/854);
+        videoLeft = -20;
+        videoTop = (constWinHeight - videoHeight);
+      }
+      if (logoHeight > (resizeWinWidth - 30)) {
+          logoHeight = resizeWinWidth / 1.4;
+      }
+      $('#logo').css({
+          height: logoHeight,
+          top: ((constWinHeight + navMargin) - logoHeight) / 2
+      });
+      $('.video').css({
+        width: videoWidth,
+        height: videoHeight,
+        left: videoLeft,
+        top: videoTop
+      });
+    });
+
+    /*--- Video/Title Fade ---------------------------------------------------*/
+    $(window).trigger('resize');
+    setTimeout(function(){ 
+      $('.video').fadeIn('slow');
+    }, 250);
+  });
+  /*--- End Document Ready ---------------------------------------------------*/
+
+  /*--- URL Management -------------------------------------------------------*/
+  var linkClicked = false;
+  $("#main-nav li a").click(function () {
+     var title = $(this).text();
+     linkClicked = true;
+     History.pushState({state: this.href}, 
+                       title + ' · Celli @ Berkeley', 
+                       this.href);
+     return false;
+  });
+
+  var scrollToContent = function(scrollPos) {
+    if (scrollPos < constWinHeight) {
+      scrollingTo = true;
+      $.scrollTo(constWinHeight + navMargin, 'fast', function() {
+        scrollingTo = false;
+      });
+    } else {
+      $(window).scrollTop(constWinHeight + navMargin);
+    }
+  }
+
+  History.Adapter.bind(window, 'statechange' , function() {
+    if (!linkClicked) {
+      return;
+    }
+    at_splash = false;
+    linkClicked = false;
+    var scrollPos = $(document).scrollTop();
+    var state = History.getState();
+    $('#ajax-body-wrapper').load(state.cleanUrl + ' #ajax-body-wrapper > *', 
+      function() {
+        scrollToContent(scrollPos);
+      });
+  });
+
+</script>
+<script src="//vjs.zencdn.net/4.4/video.js"></script>

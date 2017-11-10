@@ -1,0 +1,146 @@
+$serif-stack: 'Kreon', serif;
+$sans-stack: 'Open Sans', sans-serif;
+
+// Color Palette 
+$tan: #EFE2B2;
+$brown: #4F3528;
+$black: #1B1814;
+$orange: #E9C474;
+
+h1,h2,h3,p,a {
+  font-family: $serif-stack;
+}
+
+hr {
+  margin-bottom: 10px;
+  margin-top: 0px;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+@mixin top-border-radius($radius) {
+  -webkit-border-radius: $radius $radius 0px 0px;
+          border-radius: $radius $radius 0px 0px;
+}
+
+.section-header {
+  h1 {
+    margin-top: 30px;
+    margin-bottom: 2px;
+    margin-left: 0px;
+    text-align: center;
+  }
+}
+
+.pure-g-r > div {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+
+  padding-left: 0px;
+  margin: 0 auto;
+}
+
+.button {
+  @include border-radius(5px);
+  background-color: $tan;
+  padding: 5px;
+  width: 93px;
+  margin-top: 8px;
+}
+
+.event-box {
+  @include border-radius(5px);
+  background-color: $orange;
+  width: 100%;
+  max-width: 717px;
+  margin: 15px auto;
+  // border-radius: 5px;
+  // padding: 15px;
+  // padding: 10px 15px 8px 15px;
+
+  .event-photo{
+    @include top-border-radius(5px);
+    // background-image: url("https://scontent-a.xx.fbcdn.net/hphotos-frc1/t1/1899961_625775874159842_500162895_n.jpg");
+    background-size: cover;
+    min-height: 266px;
+    max-width: 100%;
+    height: auto;
+    border: 0;
+  }  
+
+  .event-info{
+    padding: 12px;
+    width: 717px;
+    // background-color: $orange;
+
+    h1 {
+      margin-top: 0px;
+      margin-bottom: 0px;
+      font-weight: 400;
+      font-size: 180%;
+    }
+
+    h2 {
+      font-weight: 400;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      font-size: 100%;
+    }
+  }
+
+  .event-description {
+    padding: 0 12px 12px 12px;
+    width: 717px;
+    // background-color: $orange;
+
+    p {
+      font-family: $sans-stack;
+      font-size: 90%;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      font-weight: 400;
+    }
+  }
+}
+
+.past-event-box {
+  @include border-radius(5px);
+  // margin-top: 5px;
+  background-color: $tan;
+  cursor: pointer;
+  padding: 8px 15px 8px 15px;
+  max-width: 717px;
+  margin: 5px auto;
+  
+  .past-event-name {
+    h1 {
+      font-weight: 400;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      font-size: 100%;
+      text-align: left;
+    }
+  }
+
+  .past-event-info {
+
+    h2 {
+      font-weight: 100;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      font-size: 100%;
+      text-align: right;
+    }
+  }
+}

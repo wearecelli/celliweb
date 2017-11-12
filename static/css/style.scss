@@ -86,6 +86,7 @@ ul {
     left: 0;
     list-style: none;
     z-index: 100;
+    margin: 0;
 }
 
 #main-nav li {
@@ -181,10 +182,10 @@ ul {
 /*---------- Footer ----------------------------------------------------------*/
 
 #footer {
-    width: 100%; 
+    width: 100%;
     height: 120px;
     background: #a49476;
-    bottom: 0;  
+    bottom: 0;
     z-index: 997;
 /*  position: absolute;
     bottom: 0;
@@ -206,7 +207,7 @@ ul {
     font-weight: 500;
     text-transform: uppercase;
     position: absolute;
-    top: 25px; left: 0; 
+    top: 25px; left: 0;
 }
 
 #line-left a {
@@ -228,7 +229,7 @@ ul {
 */  font-weight: 500;
     text-transform: uppercase;
     position: absolute;
-    top: 5px; right: 0; 
+    top: 5px; right: 0;
 }
 
 #line-right a {
@@ -263,5 +264,3 @@ ul {
 
 
 /*----------------------------------------------------------------------------*/
-
-

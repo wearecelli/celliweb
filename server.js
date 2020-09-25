@@ -185,4 +185,5 @@ app.get('/contact', function(req, res){
 });
 
 var port = process.env.PORT || 5000;
+console.log(port);
 app.listen(port);
